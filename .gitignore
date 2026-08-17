@@ -1,0 +1,16 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# macOS and editor files
+.DS_Store
+**/.DS_Store
+
+# Local source materials and private documents (not part of the published site)
+作品集图片/
+作品集-1/
+作品集-2/
+作品集-3/
+孙琦-7年UI设计师简历.pdf
+孙琦-7年UI设计师简历.json
+HANDOFF.md
