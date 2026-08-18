@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { siteConfig } from '../../config/site'
+import { assetPath, siteConfig } from '../../config/site'
 import { MediaPlaceholder } from '../ui/MediaPlaceholder'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -26,9 +26,9 @@ export function Projects() {
 }
 
 type Project = typeof siteConfig.projects[number]
-const xiaomiCaseImages = Array.from({ length: 26 }, (_, index) => `/assets/images/xiaomi-case-${index + 4}.webp`)
-const dmCaseImages = Array.from({ length: 20 }, (_, index) => `/assets/images/dm-case-${index + 2}.webp`)
-const davinciCaseImages = Array.from({ length: 11 }, (_, index) => `/assets/images/davinci-case-${index + 2}.webp`)
+const xiaomiCaseImages = Array.from({ length: 26 }, (_, index) => assetPath(`assets/images/xiaomi-case-${index + 4}.webp`))
+const dmCaseImages = Array.from({ length: 20 }, (_, index) => assetPath(`assets/images/dm-case-${index + 2}.webp`))
+const davinciCaseImages = Array.from({ length: 11 }, (_, index) => assetPath(`assets/images/davinci-case-${index + 2}.webp`))
 
 function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: () => void }) {
   const openWithKeyboard = (event: React.KeyboardEvent<HTMLElement>) => {

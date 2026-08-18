@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'framer-
 import { ArrowUpRight, Menu } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { siteConfig } from '../../config/site'
+import { assetPath, siteConfig } from '../../config/site'
 
 const navItems = [
   { label: 'ABOUT', href: '#about' },
@@ -23,7 +23,7 @@ export function Navigation() {
         <motion.div layout className={`nav-pill${isScrolled ? ' nav-pill-scrolled' : ''}`} transition={{ duration: .28, ease: 'easeOut' }}>
           <Link to="/" className="nav-brand group" aria-label="回到首页">
             <span className="nav-cat-mark relative grid h-7 w-7 place-items-center overflow-hidden rounded-full">
-              <img className="nav-cat-logo" src="/assets/images/nav-cat-logo-20260817.png" alt="" />
+              <img className="nav-cat-logo" src={assetPath('assets/images/nav-cat-logo-20260817.png')} alt="" />
             </span>
             <span>SQ / STUDIO</span>
           </Link>
