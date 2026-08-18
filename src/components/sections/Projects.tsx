@@ -29,6 +29,7 @@ type Project = typeof siteConfig.projects[number]
 const xiaomiCaseImages = Array.from({ length: 26 }, (_, index) => `assets/images/xiaomi-case-${index + 4}.webp`)
 const dmCaseImages = Array.from({ length: 20 }, (_, index) => `assets/images/dm-case-${index + 2}.webp`)
 const davinciCaseImages = Array.from({ length: 11 }, (_, index) => `assets/images/davinci-case-${index + 2}.webp`)
+const dongaoCaseImages = Array.from({ length: 5 }, (_, index) => `assets/images/dongao-case-${index + 2}.webp`)
 
 function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: () => void }) {
   const openWithKeyboard = (event: React.KeyboardEvent<HTMLElement>) => {
@@ -52,7 +53,7 @@ function ProjectCard({ project, index, onOpen }: { project: Project; index: numb
 }
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
-  const detailImages = project.id === 'mi-manager' ? xiaomiCaseImages : project.id === 'dm-system' ? dmCaseImages : project.id === 'davinci' ? davinciCaseImages : null
+  const detailImages = project.id === 'mi-manager' ? xiaomiCaseImages : project.id === 'dm-system' ? dmCaseImages : project.id === 'davinci' ? davinciCaseImages : project.id === 'dongao' ? dongaoCaseImages : null
 
   return <motion.div className="project-modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={onClose}>
     <motion.section className="project-modal" role="dialog" aria-modal="true" aria-label={`${project.title} 项目详情`} initial={{ opacity: 0, y: 30, scale: .985 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: .985 }} transition={{ duration: .34, ease: [.16, 1, .3, 1] }} onMouseDown={event => event.stopPropagation()}>
