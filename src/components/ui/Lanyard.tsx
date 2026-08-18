@@ -14,7 +14,6 @@ import {
 } from '@react-three/rapier'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import * as THREE from 'three'
-import { assetPath } from '../../config/site'
 
 extend({ MeshLineGeometry, MeshLineMaterial })
 
@@ -25,8 +24,8 @@ declare module '@react-three/fiber' {
   }
 }
 
-const CARD_GLB = assetPath('assets/lanyard/card.glb')
-const LANYARD_PNG = assetPath('assets/lanyard/lanyard.png')
+const CARD_GLB = 'assets/lanyard/card.glb'
+const LANYARD_PNG = 'assets/lanyard/lanyard.png'
 const BLANK_PIXEL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
 const FRONT_UV_RECT = { x: 0, y: 0, w: 0.5, h: 0.755 }
 const BACK_UV_RECT = { x: 0.5, y: 0, w: 0.5, h: 0.757 }
