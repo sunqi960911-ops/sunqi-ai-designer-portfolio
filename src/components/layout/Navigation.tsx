@@ -22,9 +22,6 @@ export function Navigation() {
       <div className="site-shell py-5">
         <motion.div layout className={`nav-pill${isScrolled ? ' nav-pill-scrolled' : ''}`} transition={{ duration: .28, ease: 'easeOut' }}>
           <Link to="/" className="nav-brand group" aria-label="回到首页">
-            <span className="nav-cat-mark relative grid h-7 w-7 place-items-center overflow-hidden rounded-full">
-              <img className="nav-cat-logo" src="assets/images/nav-cat-logo-20260817.png" alt="" />
-            </span>
             <span>SQ / STUDIO</span>
           </Link>
           <nav className="hidden items-center justify-center gap-10 md:flex" aria-label="主导航">

@@ -53,7 +53,7 @@ export function Hero() {
 
   return <section className="hero-portfolio" id="top">
     <motion.div ref={portraitRef} className="hero-sam-portrait" initial={{ opacity: 0, x: 70 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}>
-      <img src="assets/images/hero-sunqi-studio-20260817.png" alt={`${owner.name} 设计师肖像`} />
+      <img src="assets/images/hero-sunqi-visual-designer-2026.webp" alt={`${owner.name} 设计师肖像`} />
     </motion.div>
     <div className="hero-sam-copy">
       <motion.div ref={eyesRef} className="hero-sam-eyes" initial={{ opacity: 0, y: -18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .22, duration: .55 }} aria-hidden="true"><i /><i /></motion.div>

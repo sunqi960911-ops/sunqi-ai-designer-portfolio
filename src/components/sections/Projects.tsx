@@ -30,6 +30,7 @@ const xiaomiCaseImages = Array.from({ length: 26 }, (_, index) => `assets/images
 const dmCaseImages = Array.from({ length: 20 }, (_, index) => `assets/images/dm-case-${index + 2}.webp`)
 const davinciCaseImages = Array.from({ length: 11 }, (_, index) => `assets/images/davinci-case-${index + 2}.webp`)
 const dongaoCaseImages = Array.from({ length: 5 }, (_, index) => `assets/images/dongao-case-${index + 2}.webp`)
+const illustrationCaseImages = Array.from({ length: 12 }, (_, index) => `assets/images/illustration-case-${index + 2}.webp`)
 
 function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: () => void }) {
   const openWithKeyboard = (event: React.KeyboardEvent<HTMLElement>) => {
@@ -53,12 +54,12 @@ function ProjectCard({ project, index, onOpen }: { project: Project; index: numb
 }
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
-  const detailImages = project.id === 'mi-manager' ? xiaomiCaseImages : project.id === 'dm-system' ? dmCaseImages : project.id === 'davinci' ? davinciCaseImages : project.id === 'dongao' ? dongaoCaseImages : null
+  const detailImages = project.id === 'mi-manager' ? xiaomiCaseImages : project.id === 'dm-system' ? dmCaseImages : project.id === 'davinci' ? davinciCaseImages : project.id === 'dongao' ? dongaoCaseImages : project.id === 'illustration' ? illustrationCaseImages : null
 
   return <motion.div className="project-modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={onClose}>
     <motion.section className="project-modal" role="dialog" aria-modal="true" aria-label={`${project.title} 项目详情`} initial={{ opacity: 0, y: 30, scale: .985 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: .985 }} transition={{ duration: .34, ease: [.16, 1, .3, 1] }} onMouseDown={event => event.stopPropagation()}>
       <button className="project-modal-close" type="button" onClick={onClose} aria-label="关闭项目详情"><X size={20} /></button>
-      <div className="project-modal-body">{detailImages ? detailImages.map((image, index) => <img key={image} className="project-modal-detail-image" src={image} alt={`${project.title} 项目图 ${index + 1}`} loading={index < 2 ? 'eager' : 'lazy'} />) : <><MediaPlaceholder image={project.image} label="PROJECT COVER" className={`project-modal-cover tone-${project.tone}`} />
+      <div className="project-modal-body">{detailImages ? detailImages.map((image, index) => <img key={image} className="project-modal-detail-image" src={image} alt={`${project.title} 项目图 ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />) : <><MediaPlaceholder image={project.image} label="PROJECT COVER" className={`project-modal-cover tone-${project.tone}`} />
         <div className="project-modal-image-slot"><span>PROJECT IMAGE SLOT / 01</span><strong>预留项目长图位置</strong><p>后续可在这里添加项目过程图、界面截图或成果展示图。</p></div>
         <div className="project-modal-image-slot project-modal-image-slot-wide"><span>PROJECT IMAGE SLOT / 02</span><strong>预留更多项目图片</strong></div></>}</div>
     </motion.section>
