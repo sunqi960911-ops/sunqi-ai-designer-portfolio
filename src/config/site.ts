@@ -27,7 +27,7 @@ export const siteConfig = {
   socialLinks: [
     { label: '小红书', href: 'https://www.xiaohongshu.com/user/profile/5d6e685100000000010044e8?xsec_token=ABjlei0lsOo-7QwoPirOVT62SZpzCKm1WLo0CWqqDTIdw%3D&xsec_source=pc_search' },
     { label: 'EMAIL', href: 'mailto:1318158266@qq.com' },
-    { label: 'WECHAT', href: '#' },
+    { label: '站酷', href: 'https://www.zcool.com.cn/u/ZODA3MTA0Njg=' },
   ],
   about: {
     eyebrow: 'ABOUT ME / 01',
